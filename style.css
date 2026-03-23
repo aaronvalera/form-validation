@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-valid {
+    outline: 2px double rgb(25, 167, 25);
+}
+
+.input-unvalid {
+    outline: 2px double rgb(238, 2, 2);
+}
+
+.hide-information {
+    display: none !important;
+}
