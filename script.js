@@ -28,17 +28,16 @@ let passwordConfirmationValidation = false;
 })
 formInputInformation.forEach(paragraph => {paragraph.classList.add("hide-information")});
 
-console.log(formInputInformation)
-
 // Function 
-const inputsValidation = (validator, event, inputSelector) => {
+const inputsValidation = (validator, event, inputSelector, helpParagraphIndex) => {
     console.log(validator);
+    const helpText = formInputInformation[helpParagraphIndex];
     if(validator) {
-        formInputInformation.forEach(paragraph => {paragraph.classList.add("hide-information")});
+        helpText.classList.add("hide-information");
         inputSelector.classList.remove("input-unvalid");
         inputSelector.classList.add("input-valid");
     } else {
-        formInputInformation.forEach(paragraph => {paragraph.classList.remove("hide-information")});
+        helpText.classList.remove("hide-information");
         inputSelector.classList.remove("input-valid");
         inputSelector.classList.add("input-unvalid");
     }
@@ -50,33 +49,32 @@ const inputsValidation = (validator, event, inputSelector) => {
 
 // Event Listeners
 usernameInput.addEventListener("input", event => {
+    console.log(event.target.value);
 usernameValidation = USERNAME_REGEX.test(event.target.value);
-inputsValidation(usernameValidation, event, usernameInput);
+inputsValidation(usernameValidation, event, usernameInput, 0);
 });
 
 emailInput.addEventListener("input", event => {
     emailValidation = EMAIL_REGEX.test(event.target.value);
-    inputsValidation(emailValidation, event, emailInput);
+    inputsValidation(emailValidation, event, emailInput, 1);
 })
 
 phoneInput.addEventListener("input", event => {
     phoneValidation = NUMBER_REGEX.test(event.target.value);
-    inputsValidation(phoneValidation, event, phoneInput);
+    inputsValidation(phoneValidation, event, phoneInput, 2);
 });
 
 passwordInput.addEventListener("input", event => {
     passwordValidation = PASSWORD_REGEX.test(event.target.value);
-    inputsValidation(passwordValidation, event, passwordInput);
+    inputsValidation(passwordValidation, event, passwordInput, 3);
 });
 
 passwordConfirmationInput.addEventListener("input", event => {
     passwordConfirmationValidation = passwordInput.value === event.target.value;
-    inputsValidation(passwordConfirmationValidation, event, passwordConfirmationInput);
+    inputsValidation(passwordConfirmationValidation, event, passwordConfirmationInput, 4);
 });
 
 countriesList.addEventListener("input", event => {
     const countrySelected = [...countriesList].find(country => country.selected);
     phoneCode.textContent = `+${countrySelected.value}`;
 });
-
-console.log(formInputInformation)
