@@ -1,18 +1,87 @@
 * {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    height: 100vh;
+    background: #507CF4;
+    background: linear-gradient(90deg, rgba(80, 124, 244, 1) 0%, rgba(87, 171, 199, 1) 50%, rgba(80, 124, 244, 1) 100%);
+}
+
 body,
-form {
+form,
+.country-div,
+#phone-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+form {
+    justify-content: start;
+    gap: 0.4rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 500px;
+    height: 80%;
+    box-shadow: 0 0 10px #000000;
+    background-color: #f7f7f7;
+    overflow-y: scroll;
+}
+
+.input-div,
+.country-div {
+    width: 70%;
+}
+
+.input-div label {
+    color: #717171;
+    text-align: start;
+}
+
+.input-div .information {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.country-div {
+    align-items: start;
+    margin-bottom: 0.9rem;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    border: 2px solid #262C36;
+    text-align: start;
+}
+
+#form-title {
+    color: #000;
+}
+
+#phone-section {
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+#form-btn {
+    padding: 1rem;
+    border-radius: 4px;
+    width: 70%;
+    color: #fff;
+    background: #507cf4;
+}
+
 .input-valid {
-    outline: 2px double rgb(25, 167, 25);
+    outline: 2px solid rgba(25, 167, 25);
 }
 
 .input-unvalid {
@@ -20,5 +89,5 @@ form {
 }
 
 .hide-information {
-    display: none !important;
+    visibility: hidden !important;
 }

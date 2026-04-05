@@ -8,21 +8,23 @@
 </head>
 <body>
         <form id="form">
-            <h1 id="form-title">Validation</h1>
+            <h1 id="form-title">Register</h1>
             <div class="input-div">
-                <input type="text" id="username" placeholder="Username">
+				<label for="username">Username</label>
+				<input type="text" id="username" placeholder="Username">
                 <p class="information">
-                    Must include 1 number and 1 letter.<br>
-                    Min 5 Max. 19 characters.
+                    Can include numbers. Must have 5-19 characters.
                 </p>
             </div>
-            <div id="input-div">
+            <div class="input-div">
+				<label for="email">Email</label>
                 <input type="email" id="email" placeholder="Email">
                 <p class="information">
                     Please enter a valid email.
                 </p>
             </div>
-            <div id="input-div">
+            <div class="input-div country-div">
+				<label for="countries-list">Select a country</label>
                 <select name="countryCode" id="countries-list">
                     <option selected disabled>Select a country</option>
 	                <option data-countryCode="GB" value="44">UK (+44)</option>
@@ -241,21 +243,25 @@
 		            <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                 </select>
             </div>
-            <div id="input-div">
-                <span id="phone-code">+##</span>
+            <div class="input-div phone-div">
+				<label for="phone-number">Phone Number</label>
+				<section id="phone-section">
+				<span id="phone-code">+##</span>
                 <input type="tel" id="phone" placeholder="Phone Number">
+				</section>
 				<p class="information">
                     Please enter a valid phone number.
                 </p>
             </div>
-            <div id="input-div">
+            <div class="input-div">
+				<label for="password">Password</label>
                 <input type="password" id="password" placeholder="Password">
                 <p class="information">
-                    Must contain 1 number, 1 letter and 1 special character.<br>
-                    Max. 16 characters.
+                    Must contain letter, number and symbol. 8-19 characters.
                 </p>
             </div>
-            <div id="input-div">
+            <div class="input-div">
+				<label for="confirm-password">Confirm password</label>
                 <input type="password" id="confirm-password" placeholder="Confirm password">
                 <p class="information">
                     Passwords does not match.
