@@ -6,9 +6,11 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: #507CF4;
     background: linear-gradient(90deg, rgba(80, 124, 244, 1) 0%, rgba(87, 171, 199, 1) 50%, rgba(80, 124, 244, 1) 100%);
+    padding: 1.5rem;
+    gap: 2rem;
 }
 
 body,
@@ -23,15 +25,13 @@ footer,
 }
 
 form {
-    justify-content: start;
+    justify-content: center;
     gap: 0.4rem;
     padding: 1rem;
     width: 100%;
     max-width: 500px;
-    height: 80%;
     box-shadow: 0 0 10px #000000;
     background-color: #f7f7f7;
-    overflow-y: scroll;
 }
 
 .input-div,
@@ -88,7 +88,6 @@ input {
 }
 
 footer {
-    padding: 1.25rem;
     gap: 0.5rem;
 }
 
