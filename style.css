@@ -13,6 +13,7 @@ body {
 
 body,
 form,
+footer,
 .country-div,
 #phone-section {
     display: flex;
@@ -78,6 +79,17 @@ input {
     width: 70%;
     color: #fff;
     background: rgba(122, 122, 122, 0.5);
+}
+
+footer {
+    padding: 1.25rem;
+    gap: 0.5rem;
+}
+
+a,
+h2 {
+    text-decoration: none;
+    color: #000;
 }
 
 .input-valid {
