@@ -55,6 +55,10 @@ form {
     margin-bottom: 0.9rem;
 }
 
+#form-title {
+    color: #000;
+}
+
 select,
 input {
     width: 100%;
@@ -64,8 +68,10 @@ input {
     text-align: start;
 }
 
-#form-title {
-    color: #000;
+#phone::-webkit-outer-spin-button,
+#phone::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
 }
 
 #phone-section {
