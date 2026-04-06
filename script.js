@@ -1,34 +1,51 @@
-// Regex validation
-const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9_]{5,19}$/;
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()-+]).{8, 16}$/;
-const EMAIL_REGEX = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+// // Regex validation // //
+const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()-+]).{8,19}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const NUMBER_REGEX = /^\d{10}$/;
 
-// Selectors
+// // Selectors // //
 const countriesList = document.querySelector("#countries-list");
+const phoneCode = document.querySelector("#phone-code");
+const formInputInformation = document.querySelectorAll(".information");
+const submitFormBtn = document.querySelector("#form-btn");
 const usernameInput = document.querySelector("#username");
 const emailInput = document.querySelector("#email");
 const phoneInput = document.querySelector("#phone");
 const passwordInput = document.querySelector("#password");
 const passwordConfirmationInput = document.querySelector("#confirm-password");
-const phoneCode = document.querySelector("#phone-code");
-const formInputInformation = document.querySelectorAll(".information");
 
 
-// Variables
+// // Variables // //
 let usernameValidation = false;
 let emailValidation = false;
 let phoneValidation = false;
 let passwordValidation = false;
 let passwordConfirmationValidation = false;
 
-// Validation
+// // Validation // //
+formInputInformation.forEach(paragraph => {paragraph.classList.add("hide-information")});
+
 [...countriesList].forEach(country => {
     country.innerHTML = country.innerHTML.split("(")[0];
 })
-formInputInformation.forEach(paragraph => {paragraph.classList.add("hide-information")});
 
-// Function 
+// // Functions // //
+
+// Fuction to submit the form
+const checkFormStatus = () => {
+    const isFormValid = usernameValidation &&
+                        emailValidation &&
+                        phoneValidation &&
+                        passwordValidation &&
+                        passwordConfirmationValidation;
+    submitFormBtn.disabled = !isFormValid;
+    if(isFormValid) {
+    submitFormBtn.classList.add("enable-submit-btn");
+    }
+}
+
+// Fuction to validate that the inputs meet the conditions
 const inputsValidation = (validator, event, inputSelector, helpParagraphIndex) => {
     console.log(validator);
     const helpText = formInputInformation[helpParagraphIndex];
@@ -41,17 +58,18 @@ const inputsValidation = (validator, event, inputSelector, helpParagraphIndex) =
         inputSelector.classList.remove("input-valid");
         inputSelector.classList.add("input-unvalid");
     }
-
-    if(event.target.value == "") {
+    
+    if(event.target.value === "") {
+        helpText.classList.add("hide-information");
         inputSelector.classList.remove("input-unvalid");
     }
+    checkFormStatus();
 }
 
-// Event Listeners
+// // Event Listeners // //
 usernameInput.addEventListener("input", event => {
-    console.log(event.target.value);
-usernameValidation = USERNAME_REGEX.test(event.target.value);
-inputsValidation(usernameValidation, event, usernameInput, 0);
+    usernameValidation = USERNAME_REGEX.test(event.target.value);
+    inputsValidation(usernameValidation, event, usernameInput, 0);
 });
 
 emailInput.addEventListener("input", event => {
@@ -77,4 +95,9 @@ passwordConfirmationInput.addEventListener("input", event => {
 countriesList.addEventListener("input", event => {
     const countrySelected = [...countriesList].find(country => country.selected);
     phoneCode.textContent = `+${countrySelected.value}`;
+});
+
+submitFormBtn.addEventListener("click", event => {
+    alert(`You have signed up successfully.
+         Welcome ${usernameInput.value}!`);
 });
