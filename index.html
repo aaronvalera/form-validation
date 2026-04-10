@@ -11,21 +11,24 @@
 <body>
         <form id="form">
             <h1 id="form-title">Register</h1>
-            <div class="input-div">
-				<label for="username">Username</label>
-				<input type="text" id="username" placeholder="Username">
-                <p class="information">
-                    Can include numbers. 5-19 characters. Spaces are not allowed.
-                </p>
+			<div class="input-row">
+            	<div class="input-div">
+					<label for="username">Username</label>
+					<input type="text" id="username" placeholder="Username">
+                	<p class="information">
+                    	Can include numbers. 5-19 characters. Spaces are not allowed.
+                	</p>
+            	</div>
+            	<div class="input-div">
+					<label for="email">Email</label>
+                	<input type="email" id="email" placeholder="Email">
+                	<p class="information">
+                    	Please enter a valid email.
+                	</p>
+            	</div>
             </div>
-            <div class="input-div">
-				<label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email">
-                <p class="information">
-                    Please enter a valid email.
-                </p>
-            </div>
-            <div class="input-div country-div">
+			<div class="input-row">
+				<div class="input-div country-div">
 				<label for="countries-list">Select a country</label>
                 <select name="countryCode" id="countries-list">
                     <option selected disabled>Select a country</option>
@@ -244,32 +247,35 @@
 		            <option data-countryCode="ZM" value="260">Zambia (+260)</option>
 		            <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                 </select>
-            </div>
-            <div class="input-div phone-div">
-				<label for="phone-number">Phone Number</label>
-				<section id="phone-section">
-				<span id="phone-code">+##</span>
-                <input type="number" id="phone" placeholder="Phone Number">
-				</section>
-				<p class="information">
-                    Please enter a valid phone number. Max. 15 numbers.
-                </p>
-            </div>
-            <div class="input-div">
-				<label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password">
-                <p class="information">
-                    Must contain letter, capital letter, number and symbol "!@#$%^&*()-+". 8-19 characters.
-                </p>
-            </div>
-            <div class="input-div">
-				<label for="confirm-password">Confirm password</label>
-                <input type="password" id="confirm-password" placeholder="Confirm password">
-                <p class="information">
-                    Passwords does not match.
-                </p>
-            </div>
-            <button id="form-btn" disabled>Submit</button>
+            	</div>
+            	<div class="input-div phone-div">
+					<label for="phone-number">Phone Number</label>
+					<section id="phone-section">
+					<span id="phone-code">+##</span>
+                	<input type="number" id="phone" placeholder="Phone Number">
+					</section>
+					<p class="information">
+                    	Please enter a valid phone number. Max. 15 numbers.
+                	</p>
+            	</div>
+			</div>
+			<div class="input-row">
+            	<div class="input-div">
+					<label for="password">Password</label>
+                	<input type="password" id="password" placeholder="Password">
+                	<p class="information">
+                    	Must contain letter, capital letter, number and symbol "!@#$%^&*()-+". 8-19 characters.
+                	</p>
+            	</div>
+            	<div class="input-div">
+					<label for="confirm-password">Confirm password</label>
+                	<input type="password" id="confirm-password" placeholder="Confirm password">
+                	<p class="information">
+                    	Passwords does not match.
+                	</p>
+            	</div>
+			</div>
+            <button id="form-btn" disabled>SUBMIT</button>
         </form>
     
 	<footer>

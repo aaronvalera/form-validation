@@ -10,12 +10,15 @@ body {
     background: #507CF4;
     background: linear-gradient(90deg, rgba(80, 124, 244, 1) 0%, rgba(87, 171, 199, 1) 50%, rgba(80, 124, 244, 1) 100%);
     padding: 1.5rem;
-    gap: 2rem;
+    gap: 1.6rem;
+    overflow: hidden;
 }
 
 body,
 form,
 footer,
+.input-div,
+.information,
 .country-div,
 #phone-section {
     display: flex;
@@ -24,35 +27,62 @@ footer,
     align-items: center;
 }
 
+h1 {
+    margin-bottom: 1rem;
+}
+
+form,
+input,
+select,
+.input-row,
+.input-div,
+.input-div .information,
+#phone-section,
+#form-btn {
+    width: 100%;
+}
+
+
 form {
     justify-content: center;
     gap: 0.4rem;
     padding: 1rem;
-    width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     box-shadow: 0 0 10px #000000;
     background-color: #f7f7f7;
+    border-radius: 1.5rem;
 }
 
-.input-div,
-.country-div {
-    width: 70%;
+.input-div {
+    flex: 1;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 }
 
 .input-div label {
-    color: #717171;
-    text-align: start;
+    color: #444;
+    font-weight: 500;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
 }
 
 .input-div .information {
-    margin-top: 0.5rem;
     text-align: center;
+    margin-top: 0.5rem;
     font-size: 0.8rem;
+    min-height: 1.8rem;
+}
+
+.input-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .country-div {
-    align-items: start;
-    margin-bottom: 0.9rem;
+    align-items: flex-start;
 }
 
 #form-title {
@@ -61,9 +91,8 @@ form {
 
 select,
 input {
-    width: 100%;
     padding: 1rem;
-    border-radius: 0.6rem;
+    border-radius:1.5rem;
     border: 2px solid #262C36;
     text-align: start;
 }
@@ -77,14 +106,16 @@ input {
 #phone-section {
     flex-direction: row;
     gap: 0.8rem;
+    align-items: center;
 }
 
 #form-btn {
     padding: 1rem;
-    border-radius: 4px;
-    width: 70%;
+    border-radius: 1.5rem;
     color: #fff;
     background: rgba(122, 122, 122, 0.5);
+    letter-spacing: 1px;
+    font-weight: bold
 }
 
 footer {
