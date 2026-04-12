@@ -20,6 +20,7 @@ footer,
 .input-div,
 .information,
 .country-div,
+.password-wrapper,
 #phone-section {
     display: flex;
     flex-direction: column;
@@ -37,6 +38,7 @@ select,
 .input-row,
 .input-div,
 .input-div .information,
+.password-wrapper,
 #phone-section,
 #form-btn {
     width: 100%;
@@ -127,6 +129,32 @@ h2 {
     text-decoration: none;
     color: #000;
 }
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1.4rem;
+    top: 40%;
+    cursor: pointer;
+    user-select: none;
+    color: #717171;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+
+.eye-closed-icon { display: none; }
+.eye-opened-icon { display: block; }
+
+/* Cuando activamos 'is-visible', invertimos la visibilidad */
+.password-wrapper.is-visible .eye-closed-icon { display: block; }
+.password-wrapper.is-visible .eye-opened-icon { display: none; }
 
 .input-valid {
     outline: 2px solid rgba(25, 167, 25);
