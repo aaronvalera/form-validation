@@ -2,7 +2,7 @@
 const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()-+]).{8,19}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const NUMBER_REGEX = /^\d{15}$/;
+const NUMBER_REGEX = /^\d{10,15}$/;
 
 // // Selectors // //
 const countriesList = document.querySelector("#countries-list");
