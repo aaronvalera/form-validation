@@ -72,6 +72,12 @@ const inputsValidation = (validator, inputSelector, helpParagraphIndex) => {
 };
 
 // Function to validate if passwords match
+const validatePasswords = () => {
+    passwordConfirmationValidation = passwordConfirmationInput.value !== "" && passwordInput.value === passwordConfirmationInput.value;
+    inputsValidation(passwordConfirmationValidation, passwordConfirmationInput, 4);
+};
+
+// Function to toggle passwords' buttons to display the typed password
 togglePasswordsBtns.forEach(button => {
     button.addEventListener("click", () => {
         const targetID = button.getAttribute("data-target");
@@ -89,6 +95,7 @@ togglePasswordsBtns.forEach(button => {
         }
     });
 });
+
 // // Event Listeners // //
 usernameInput.addEventListener("input", event => {
     usernameValidation = USERNAME_REGEX.test(event.target.value);
@@ -112,7 +119,7 @@ passwordInput.addEventListener("input", event => {
 });
 
 passwordConfirmationInput.addEventListener("input", event => {
-    validatePasswords();
+    validatePasswords(event);
 });
 
 countriesList.addEventListener("input", event => {
