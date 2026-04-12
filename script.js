@@ -82,15 +82,15 @@ togglePasswordsBtns.forEach(button => {
     button.addEventListener("click", () => {
         const targetID = button.getAttribute("data-target");
         const targetInput = document.getElementById(targetID);
-        const wrapper = button.closest('.password-wrapper');
+        const wrapper = button.closest(".password-wrapper");
 
         if (targetInput.type === "password") {
             targetInput.type = "text";
-            wrapper.classList.add('is-visible'); 
+            wrapper.classList.add("is-visible"); 
             button.title = "Hide password";
         } else {
             targetInput.type = "password";
-            wrapper.classList.remove('is-visible'); 
+            wrapper.classList.remove("is-visible"); 
             button.title = "Show password";
         }
     });
@@ -119,7 +119,7 @@ passwordInput.addEventListener("input", event => {
 });
 
 passwordConfirmationInput.addEventListener("input", event => {
-    validatePasswords(event);
+    validatePasswords();
 });
 
 countriesList.addEventListener("input", event => {

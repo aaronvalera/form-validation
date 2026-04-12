@@ -149,12 +149,20 @@ h2 {
     color: #000;
 }
 
-.eye-closed-icon { display: none; }
-.eye-opened-icon { display: block; }
+.eye-closed-icon {
+    display: none;
+}
+.eye-opened-icon {
+    display: block;
+}
 
-/* Cuando activamos 'is-visible', invertimos la visibilidad */
-.password-wrapper.is-visible .eye-closed-icon { display: block; }
-.password-wrapper.is-visible .eye-opened-icon { display: none; }
+.password-wrapper.is-visible .eye-closed-icon {
+    display: block;
+}
+
+.password-wrapper.is-visible .eye-opened-icon {
+    display: none;
+}
 
 .input-valid {
     outline: 2px solid rgba(25, 167, 25);
