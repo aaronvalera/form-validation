@@ -22,13 +22,14 @@ let emailValidation = false;
 let phoneValidation = false;
 let passwordValidation = false;
 let passwordConfirmationValidation = false;
+let passwordChecker = false;
 
 // // Validation // //
 formInputInformation.forEach(paragraph => {paragraph.classList.add("hide-information")});
 
 [...countriesList].forEach(country => {
     country.innerHTML = country.innerHTML.split("(")[0];
-})
+});
 
 // // Functions // //
 
@@ -42,13 +43,21 @@ const checkFormStatus = () => {
     submitFormBtn.disabled = !isFormValid;
     if(isFormValid) {
     submitFormBtn.classList.add("enable-submit-btn");
+    } else {
+        submitFormBtn.classList.remove("enable-submit-btn"); 
     }
-}
+};
 
 // Fuction to validate that the inputs meet the conditions
-const inputsValidation = (validator, event, inputSelector, helpParagraphIndex) => {
-    console.log(validator);
+const inputsValidation = (validator, inputSelector, helpParagraphIndex) => {
     const helpText = formInputInformation[helpParagraphIndex];
+    if(inputSelector.value === "") {
+        helpText.classList.add("hide-information");
+        inputSelector.classList.remove("input-unvalid");
+        inputSelector.classList.remove("input-valid");
+        checkFormStatus();
+        return;
+    }
     if(validator) {
         helpText.classList.add("hide-information");
         inputSelector.classList.remove("input-unvalid");
@@ -59,37 +68,39 @@ const inputsValidation = (validator, event, inputSelector, helpParagraphIndex) =
         inputSelector.classList.add("input-unvalid");
     }
     
-    if(event.target.value === "") {
-        helpText.classList.add("hide-information");
-        inputSelector.classList.remove("input-unvalid");
-    }
     checkFormStatus();
-}
+};
+
+// Function to validate if passwords match
+const validatePasswords = () => {
+    passwordConfirmationValidation = passwordConfirmationInput.value !== "" && passwordInput.value === passwordConfirmationInput.value;
+    inputsValidation(passwordConfirmationValidation, passwordConfirmationInput, 4);
+};
 
 // // Event Listeners // //
 usernameInput.addEventListener("input", event => {
     usernameValidation = USERNAME_REGEX.test(event.target.value);
-    inputsValidation(usernameValidation, event, usernameInput, 0);
+    inputsValidation(usernameValidation, usernameInput, 0);
 });
 
 emailInput.addEventListener("input", event => {
     emailValidation = EMAIL_REGEX.test(event.target.value);
-    inputsValidation(emailValidation, event, emailInput, 1);
+    inputsValidation(emailValidation, emailInput, 1);
 })
 
 phoneInput.addEventListener("input", event => {
     phoneValidation = NUMBER_REGEX.test(event.target.value);
-    inputsValidation(phoneValidation, event, phoneInput, 2);
+    inputsValidation(phoneValidation, phoneInput, 2);
 });
 
 passwordInput.addEventListener("input", event => {
     passwordValidation = PASSWORD_REGEX.test(event.target.value);
-    inputsValidation(passwordValidation, event, passwordInput, 3);
+    inputsValidation(passwordValidation, passwordInput, 3);
+    validatePasswords();
 });
 
 passwordConfirmationInput.addEventListener("input", event => {
-    passwordConfirmationValidation = passwordInput.value === event.target.value;
-    inputsValidation(passwordConfirmationValidation, event, passwordConfirmationInput, 4);
+    validatePasswords();
 });
 
 countriesList.addEventListener("input", event => {
