@@ -189,4 +189,8 @@ h2 {
         flex-direction: column;
         gap: 0.5rem;
     }
+
+    .input-row.phone-row {
+        gap: 2.75rem;
+    }
 }
