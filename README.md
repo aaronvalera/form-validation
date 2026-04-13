@@ -23,9 +23,9 @@ The form isn't just about looks; it's packed with technical functionalities:
 
 ## 🛠️ Technologies Used
 Built with a focus on performance and clean code:
-* 🟨 **JavaScript (55.0%):** Validation engines, Regex logic, and DOM event control.
-* 🟧 **HTML (25.0%):** Semantic structure and responsive containers.
-* 🟦 **CSS (20.0%):** Minimalist design, color variables, and validation animations.
+* 🟨 **JavaScript (15.3%):** Validation engines, Regex logic, and DOM event control.
+* 🟧 **HTML (75.7%):** Semantic structure and responsive containers.
+* 🟦 **CSS (9.0%):** Minimalist design, color variables, and validation animations.
 
 ## 🌐 Live Demo
 Want to see the validations in action? Try it out here:  
