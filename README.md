@@ -25,11 +25,11 @@ This project showcases a secure and intuitive registration/login workflow. It in
 ---
 
 ## Technologies Used
+* **JavaScript (ES6+)** - Event loops, state feedback, and regex validation patterns.
+
+* **CSS** - UI/UX design.
+
 * **HTML5** - Semantic structure and accessible input attributes.
-
-* **CSS** - Utility-first styling framework for rapid UI development and fully responsive components.
-
-* **JavaScript (ES6+)** - Vanilla event loops, state feedback, and regex validation patterns.
 
 ---
 
