@@ -16,9 +16,9 @@ A clean, interactive, and responsive client-side form validation interface. Buil
 This project showcases a secure and intuitive registration/login workflow. It intercepts user input dynamically, applying strict validation constraints before form submission. The UI adapts on the fly, showing clear, accessible error messages and state changes to ensure a frictionless interaction.
 
 ### Key Knowledge & Technical Skills Applied:
-* **Advanced DOM Manipulation:** Leveraging vanilla JavaScript to listen to input events, toggle CSS utility classes, and inject dynamic content into the DOM.
+* **Advanced DOM Manipulation:** Leveraging vanilla JavaScript to listen to input events, toggle CSS classes, and inject dynamic content into the DOM.
 * **Real-time Event Handling:** Utilizing optimal event listeners (such as `input` or `blur`) to provide instant visual validation indicators before the user hits submit.
-* **Modern Component Styling:** Implementing a clean, mobile-first design system utilizing **Tailwind CSS** for responsive layout control and state animations.
+* **Modern Component Styling:** Implementing a clean, mobile-first design system utilizing **CSS** for responsive layout control and state animations.
 * **Regular Expressions (Regex):** Applying custom regex patterns to validate complex input data structural integrity (e.g., email formats and password strength).
 * **Form UX Best Practices:** Preventing default browser submission behaviors (`event.preventDefault()`) to handle success and error states programmatically.
 
