@@ -3,11 +3,11 @@
 A clean, interactive, and responsive client-side form validation interface. Built using semantic **HTML5**, **Tailwind CSS**, and **Vanilla JavaScript**, this project demonstrates frontend engineering best practices by delivering real-time user feedback, custom error handling, and a seamless user experience without relying on heavy external frontend frameworks.
 
 ## Index
-1. [Project Overview](#proyect-overview)
-2. [Technologies Used](#-technologies-used)
-3. [Live Demo](#-live-demo)
-4. [Author](#-author)
-5. [License](#-license)
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Live Demo](#live-demo)
+4. [Author](#author)
+5. [License](#license)
 
 ---
 
